@@ -1,0 +1,30 @@
+version: '3'
+
+services:
+
+  db:
+    image: mysql:8.0
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: M@tech@pp1234
+      MYSQL_DATABASE: crud
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./dbdata:/var/lib/mysql
+    networks: 
+      net:
+
+  app:
+    build: .
+    ports:
+      - "5000:5000"
+    networks: 
+     net:
+
+
+
+networks: 
+  net:
+    driver: bridge      
+  
