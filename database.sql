@@ -20,6 +20,11 @@ SET time_zone = "+00:00";
 --
 -- Database: `crud`
 --
+-- --------------------------------------------------------
+
+CREATE USER app@'%' IDENTIFIED BY '1234';
+GRANT ALL PRIVILEGES ON crud.* TO app@'%';
+FLUSH PRIVILEGES;
 
 -- --------------------------------------------------------
 
